@@ -26,7 +26,11 @@ const Home = () => {
   const clickHandler = (x: number, y: number) => {
     console.log(x, y);
     const newBoard = structuredClone(board);
-    for (const direction of directions) {
+    for (const direction of directions)
+
+      
+    if (newBoard[y][x] ===0) {
+      {
       if (newBoard[y + direction[0]][x + direction[1]] === 3 - turnColor) {
         for (let i = 1; i < 8; i++) {
           if (newBoard[y + direction[0] * i][x + direction[1] * i] === 3 - turnColor) {
@@ -42,7 +46,10 @@ const Home = () => {
         }
       }
     }
-  };
+  }
+};
+
+
   return (
     <div className={styles.container}>
       <div className={styles.boardStyle}>
